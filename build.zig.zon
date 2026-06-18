@@ -1,0 +1,36 @@
+.{
+    .name = .zupx,
+    .version = "0.1.0",
+    .fingerprint = 0x61db5a759978bae, // Changing this has security and trust implications.
+    .minimum_zig_version = "0.16.0",
+    .dependencies = .{
+        .upx = .{
+            .url = "https://github.com/upx/upx/archive/refs/tags/v5.2.0.tar.gz",
+            .hash = "N-V-__8AAO1VyQDc-CGsdgMwtpo69ggP67uuCncdfFb-nUo9",
+        },
+        .ucl = .{
+            .url = "https://github.com/upx/upx-vendor-ucl/archive/refs/heads/upx-vendor.tar.gz",
+            .hash = "N-V-__8AAGeiBACGXQUNgsrFF5ZLSYjgQgLEKeDdulDJdU25",
+        },
+        .zlib = .{
+            .url = "https://github.com/upx/upx-vendor-zlib/archive/refs/heads/upx-vendor.tar.gz",
+            .hash = "N-V-__8AANyXEABAZ7t_gbbkoR9KR__oS64nS_hMwfPNjzLb",
+        },
+        .lzma_sdk = .{
+            .url = "https://github.com/upx/upx-vendor-lzma-sdk/archive/refs/heads/upx-vendor.tar.gz",
+            .hash = "N-V-__8AAEuTAgAUKWoDKhko6uoYE23yJMTaWrdqBOuWT4cX",
+        },
+        .doctest = .{
+            .url = "https://github.com/upx/upx-vendor-doctest/archive/refs/heads/upx-vendor.tar.gz",
+            .hash = "N-V-__8AAKvyBADe3f_xoERmavbG7kCTDWBqWwRJo-0ZpMg-",
+        },
+        .valgrind = .{
+            .url = "https://github.com/upx/upx-vendor-valgrind/archive/refs/heads/upx-vendor.tar.gz",
+            .hash = "N-V-__8AAE8PCADku7LWNsXFamhwDwEZVRCy-Mg0UmuLS5pK",
+        },
+    },
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+    },
+}
