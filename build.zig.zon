@@ -1,12 +1,12 @@
 .{
     .name = .zupx,
-    .version = "0.1.0",
+    .version = "0.2.0",
     .fingerprint = 0x61db5a759978bae, // Changing this has security and trust implications.
-    .minimum_zig_version = "0.16.0",
+    .minimum_zig_version = "0.17.0",
     .dependencies = .{
         .upx = .{
-            .url = "https://github.com/upx/upx/archive/refs/tags/v5.2.0.tar.gz",
-            .hash = "N-V-__8AAO1VyQDc-CGsdgMwtpo69ggP67uuCncdfFb-nUo9",
+            .url = "https://github.com/upx/upx/archive/refs/tags/v5.2.1.tar.gz",
+            .hash = "N-V-__8AAHTdywBaoXFX4E5Vt0moptm53VfZjdQ1PdXOzgH3",
         },
         .ucl = .{
             .url = "https://github.com/upx/upx-vendor-ucl/archive/refs/heads/upx-vendor.tar.gz",

@@ -1,5 +1,4 @@
 const std = @import("std");
-const IoDir = std.Io.Dir;
 
 pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
@@ -112,13 +111,12 @@ fn addSourcesFromDependency(
     flags: []const []const u8,
 ) !void {
     const dep = b.dependency(dep_name, .{});
-    const dep_path = dep.builder.build_root.path.?;
-    const dir_path = if (sub_dir.len > 0)
-        try std.fs.path.join(b.allocator, &.{ dep_path, sub_dir })
-    else
-        dep_path;
 
-    var dir = try IoDir.openDirAbsolute(b.graph.io, dir_path, .{ .iterate = true });
+    // The configure phase may inspect dependency directories, but doing so must
+    // be declared so that `zig build` knows when to rerun the build script.
+    b.dependOnDirectoryContents(dep.path(sub_dir));
+
+    var dir = try dep.builder.root.openDir(b.graph.io, if (sub_dir.len > 0) sub_dir else ".", .{ .iterate = true });
     defer dir.close(b.graph.io);
 
     var it = dir.iterate();
